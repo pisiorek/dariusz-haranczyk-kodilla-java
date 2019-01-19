@@ -7,12 +7,12 @@ import java.util.ArrayList;
 
 public class CollectionTestSuite {
     @Before
-    public void beforeEmptyList(){
-        System.out.println("Test pustej listy Start");
+    public void before() {
+        System.out.println("Test case Start");
     }
     @After
-    public void afterEmptyList(){
-        System.out.println("Test pustej listy Stop");
+    public void after(){
+        System.out.println("Test case Stop");
     }
 
     @Test
@@ -26,20 +26,20 @@ public class CollectionTestSuite {
         //When
             //przekazanie pustej listy utworzonej jako argumentu do metody exterminate i odebranie rezultatu metody exterminate
         ArrayList<Integer> resultList = listOddNumbers.exterminate(numbers);
-        System.out.println("Testowanie przypadku pustej listy");
+        System.out.println("Trwa testowanie pustej listy");
 
         //Then
         Assert.assertTrue(resultList.isEmpty());
     }
 
-    @Before
+/*    @Before
     public void beforeNormalList(){
         System.out.println("Test poprawności listy Start");
     }
     @After
     public void afterNormalList(){
         System.out.println("Test poprawności listy Stop");
-    }
+    }*/
 
     @Test
     public void testOddNumbersExterminatorNormalList(){
@@ -67,8 +67,9 @@ public class CollectionTestSuite {
         System.out.println("Testowanie przypadku poprawnie wypełnionej listy");
 
         //Then
+        Assert.assertTrue(resultList.size() == 5);
         for(Integer listElement: resultList) {
-            Assert.assertTrue((listElement % 2) == 0);
+            Assert.assertTrue((listElement % 2)==0 );
         }
 
 
