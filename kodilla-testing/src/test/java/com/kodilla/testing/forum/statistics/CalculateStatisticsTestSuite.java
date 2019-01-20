@@ -38,8 +38,8 @@ public class CalculateStatisticsTestSuite {
         namesList.add("Mateusz");
         namesList.add("Wojtek");
 
-        //kiedy dla instancji obiektu symulującego (mockito)zostanie wywołana matoda wymagana przez interfejs Statistics
-        //wtedy zwróć dane symulowane - w tym wypadku namesList zadeklarowaną w interfejsie
+        //kiedy dla instancji obiektu symulującego (mockito)zostanie wywołana matoda wymagana przez interfejs Statistics,
+        //wtedy zwróć dane symulowane - w tym wypadku namesList oraz liczba komentarzy i postów zadeklarowana w interfejsie
         when(statisticsMock.usersNames()).thenReturn(namesList);
         when(statisticsMock.commentsCount()).thenReturn(commentsNumber);
         when(statisticsMock.postsCount()).thenReturn(postsNumber);
@@ -49,8 +49,8 @@ public class CalculateStatisticsTestSuite {
 
         //When
 
-        //wywołanie metody głównej metody klasy C..S.. która w konstruktorze przyjmuje
-        //obiekt symulujący interfejs Statistics
+        //wywołanie metody głównej metody klasy C..S.. i przekazanie  argumencie
+        //obiektu symulującego interfejs Statistics
         double userNumber = calculateStats.calculateAdvStatistics(statisticsMock);
 
         //Then
