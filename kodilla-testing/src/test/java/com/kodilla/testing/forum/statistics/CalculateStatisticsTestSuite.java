@@ -27,11 +27,13 @@ public class CalculateStatisticsTestSuite {
 
         //tworzymy obiekt symulujący obiekt klasy implementującej interfejs Statistics
         Statistics statisticsMock = mock(Statistics.class);
+
+        //poniżej dane symulujące działanie metod z interfejsu
         //przygotowanie danych symulacyjnych dla klasy CalculateStatistics, czyli liczba postów i komentarzy
         //oraz ArrayListy z imionami uzytkowników
-        int postsNumber = 10;
-        int commentsNumber = 50;
-        List<String> namesList = new ArrayList<String>();
+        int postsNumber = 10; //symulacja zwracanej wartości przez metodę postsCount
+        int commentsNumber = 50;//symulacja zwracanej wartości przez metodę commentsCount
+        List<String> namesList = new ArrayList<String>();//symulacja zwracanej wartości przez metodę usersNames()
         namesList.add("Darek");
         namesList.add("Jarek");
         namesList.add("Arek");
@@ -80,10 +82,10 @@ public class CalculateStatisticsTestSuite {
         //przekazanie obiektu mocka w argumencie metody calculateAdvStatistics
         //w tym wypadku konieczne aby nastąpiły obliczenia oraz ustawienie pól klasy C..S..
         calculateStats.calculateAdvStatistics(statisticsMock);
-        double howManyPosts = calculateStats.getPostsNumber();
+        double postNumber = calculateStats.getPostsNumber();
 
         //Then
-        Assert.assertTrue(0 == howManyPosts);
+        Assert.assertTrue(0 == postNumber);
 
 
     }
