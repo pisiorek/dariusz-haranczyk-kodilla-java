@@ -143,14 +143,14 @@ public class BookDirectoryTestSuite {
         Book book5 = new Book("Trzy", "Erwwwnest", 1953);
 
         LibraryUser user1 = new LibraryUser("Michał", "Kot","pesel1");
-        List<Book> resultListOfOneBooks = new ArrayList<Book>();
-        resultListOfOneBooks.add(book1);
-        resultListOfOneBooks.add(book2);
-        resultListOfOneBooks.add(book3);
-        resultListOfOneBooks.add(book4);
-        resultListOfOneBooks.add(book5);
+        List<Book> resultListOfFiveBooks = new ArrayList<Book>();
+        resultListOfFiveBooks.add(book1);
+        resultListOfFiveBooks.add(book2);
+        resultListOfFiveBooks.add(book3);
+        resultListOfFiveBooks.add(book4);
+        resultListOfFiveBooks.add(book5);
 
-        when(libraryDatabaseMock.listBooksInHandsOf(user1)).thenReturn(resultListOfOneBooks);
+        when(libraryDatabaseMock.listBooksInHandsOf(user1)).thenReturn(resultListOfFiveBooks);
 
         // When
         List<Book> resultList = bookLibrary.listBooksInHandsOf(user1);
