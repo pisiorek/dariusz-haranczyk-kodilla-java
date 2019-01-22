@@ -25,14 +25,8 @@ public class BookLibrary {
     /**
      * @return listę książek które zostały wypożyczone przez usera przekazanego w argumencie metody
      */
-/*    public List<Book> listBooksInHandsOf(LibraryUser libraryUser){
-
-        String userID  = libraryUser.getPeselId();
-        HashMap userRentedBooks;
-        List<Book> listBooksInCertainUser = new ArrayList<>();
-
-
-        return listBooksInCertainUser;
-    }*/
+    public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
+        return libraryDatabase.listBooksInHandsOf(libraryUser);
+    }
 
 }
