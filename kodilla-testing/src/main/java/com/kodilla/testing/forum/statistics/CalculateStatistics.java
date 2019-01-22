@@ -2,7 +2,7 @@ package com.kodilla.testing.forum.statistics;
 
 public class CalculateStatistics {
 
-    Statistics statistics;
+    //Statistics statistics;
     private  int usersNumber = 0;
     private  int postsNumber = 0;
     private  int commentsNumber = 0;
@@ -42,22 +42,22 @@ public class CalculateStatistics {
         this.commentsNumber = commentsNumber;
     }
 
-    public Statistics getStatistics() {
+/*    public Statistics getStatistics() {
         return statistics;
     }
 
     public CalculateStatistics(){
 
-    }
+    }*/
 
     public double calculateAdvStatistics(Statistics statistics){
 
         //liczymy ilość użytkowników forum na podstawie przekazanej listy przy użyciu pętli for
         //zliczoną wartość zapisujemy do zmiennej usersNumber
-        for (int i = 0; i < statistics.usersNames().size(); i++){
+/*        for (int i = 0; i < statistics.usersNames().size(); i++){
             usersNumber++;
 
-        }
+        }*/
 
         //wywołujemy metodę postsCount zadeklarowaną w interfejsie i zwrócone przez nią
         //dane w postaci liczby postów zapisujemy w polu postsNumber
@@ -71,7 +71,7 @@ public class CalculateStatistics {
         this.averageCommentsPerUser = (double)commentsNumber / (double)usersNumber;
         this.averageCommentsPerPost = (double)commentsNumber / (double)postsNumber;
 
-        return usersNumber;
+        return usersNumber = statistics.usersNames().size();
     }
 
     //metoda wyświetlająca statystyki

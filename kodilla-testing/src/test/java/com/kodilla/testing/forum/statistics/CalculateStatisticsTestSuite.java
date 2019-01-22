@@ -18,7 +18,8 @@ public class CalculateStatisticsTestSuite {
     @Before
     public void showTestCounter(){
         counter++;
-        System.out.println(counter);
+
+        System.out.println("Test #"+ counter);
     }
 
     @Test
@@ -56,7 +57,7 @@ public class CalculateStatisticsTestSuite {
         double userNumber = calculateStats.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertTrue(5 == userNumber);
+        Assert.assertEquals(5 , userNumber,0.1);
         System.out.println("Statystyki dla testu głównego: \n");
         calculateStats.showStatistics();
     }
@@ -85,7 +86,7 @@ public class CalculateStatisticsTestSuite {
         double postNumber = calculateStats.getPostsNumber();
 
         //Then
-        Assert.assertTrue(0 == postNumber);
+        Assert.assertEquals(0, postNumber, 0.1);
 
 
     }
@@ -110,7 +111,7 @@ public class CalculateStatisticsTestSuite {
         double postNumber = calculateStats.getPostsNumber();
 
         //Then
-        Assert.assertTrue(1000 == postNumber);
+        Assert.assertEquals(1000,postNumber, 0.1);
 
 
     }
@@ -138,7 +139,7 @@ public class CalculateStatisticsTestSuite {
 
 
         //Then
-        Assert.assertTrue(0 == commentsNum);
+        Assert.assertEquals(0, commentsNum, 0.1);
 
 
     }
@@ -227,7 +228,7 @@ public class CalculateStatisticsTestSuite {
         double userNumber = calculateStats.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertTrue(0 == userNumber);
+        Assert.assertEquals(0, userNumber,0.1);
 
 
     }
@@ -268,7 +269,7 @@ public class CalculateStatisticsTestSuite {
         double userNumber = calculateStats.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertTrue(100 == userNumber);
+        Assert.assertEquals(100, userNumber, 0.1);
 
     }
 
