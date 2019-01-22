@@ -35,10 +35,12 @@ public class WeatherForecastTestSuite {
         //utworzenie obiektu i przekazanie mu w konstruktorze sztucznego interfejsu mocka
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
+
         //When
 
         //wywołanie metody już na właściwym obiekcie do któego przekazaliśmy dane symulowane
         int quantityOfSensors = weatherForecast.calculateForecast().size();
+
 
         //Then
         Assert.assertEquals(5, quantityOfSensors);

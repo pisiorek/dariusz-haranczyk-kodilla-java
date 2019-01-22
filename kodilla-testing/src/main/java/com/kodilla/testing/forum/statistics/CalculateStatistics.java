@@ -42,24 +42,10 @@ public class CalculateStatistics {
         this.commentsNumber = commentsNumber;
     }
 
-/*    public Statistics getStatistics() {
-        return statistics;
-    }
-
-    public CalculateStatistics(){
-
-    }*/
 
     public double calculateAdvStatistics(Statistics statistics){
 
-        //liczymy ilość użytkowników forum na podstawie przekazanej listy przy użyciu pętli for
-        //zliczoną wartość zapisujemy do zmiennej usersNumber
-/*        for (int i = 0; i < statistics.usersNames().size(); i++){
-            usersNumber++;
-
-        }*/
-
-        //wywołujemy metodę postsCount zadeklarowaną w interfejsie i zwrócone przez nią
+         //wywołujemy metodę postsCount zadeklarowaną w interfejsie i zwrócone przez nią
         //dane w postaci liczby postów zapisujemy w polu postsNumber
         this.postsNumber = statistics.postsCount();
 
