@@ -30,7 +30,6 @@ public class ShapeCollectorTestSuite {
 
         //Then
         Assert.assertEquals(1,figure.getListQuantity());
-
     }
     //test sprawdza czy element dodany do listy ma właściwą nazwę
     @Test
@@ -44,7 +43,6 @@ public class ShapeCollectorTestSuite {
 
         //Then
         Assert.assertEquals("Kwadrat",shapeName);
-
     }
 
     //test najpierw dodaje element do listy po czym go usuwa i sprawdza czy lista jest pusta
@@ -60,7 +58,6 @@ public class ShapeCollectorTestSuite {
 
         //Then
         Assert.assertEquals(0,figure.shapeList.size());
-
     }
 
     //test porównujacy obiekty dodane do listy
@@ -69,7 +66,6 @@ public class ShapeCollectorTestSuite {
         //Given
         ShapeCollector figure = new ShapeCollector();
         figure.addFigure(new Triangle("Trójkąt", 10, 30));
-
 
         //When
         Shape figureTested =  figure.getFigure(0);

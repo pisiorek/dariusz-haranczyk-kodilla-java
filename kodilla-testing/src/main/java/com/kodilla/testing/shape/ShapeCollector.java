@@ -3,8 +3,7 @@ package com.kodilla.testing.shape;
 import java.util.ArrayList;
 
 public class ShapeCollector {
-    Shape shape;
-    ArrayList<Shape> shapeList = new ArrayList<>();
+   ArrayList<Shape> shapeList = new ArrayList<>();
 
     //metoda dodająca do listy figurę
     public void addFigure(Shape shape){
@@ -17,7 +16,6 @@ public class ShapeCollector {
     //metoda pobiera figurę z listy
     public  Shape getFigure(int n){
         return this.shapeList.get(n);
-
     }
     public  void showFigures(){
         for(int i=0; i<shapeList.size();i++) {
@@ -25,9 +23,6 @@ public class ShapeCollector {
         }
     }
     public int getListQuantity(){
-        // return 100 temporarily
         return shapeList.size();
     }
-
-
 }
