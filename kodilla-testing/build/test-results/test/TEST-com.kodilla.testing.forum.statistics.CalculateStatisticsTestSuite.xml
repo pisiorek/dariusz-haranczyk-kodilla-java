@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" tests="8" skipped="0" failures="0" errors="0" timestamp="2019-01-22T20:47:23" hostname="DESKTOP-JPA7176" time="0.256">
+  <properties/>
+  <testcase name="testFor1000Posts" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.229"/>
+  <testcase name="testForEmptyList" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.002"/>
+  <testcase name="testCalculateNumbersOfUsers" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.007"/>
+  <testcase name="testForMoreComments" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.001"/>
+  <testcase name="testForHundredElements" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.009"/>
+  <testcase name="testForMorePost" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.002"/>
+  <testcase name="testForZeroPost" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.001"/>
+  <testcase name="testForZeroComments" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.001"/>
+  <system-out><![CDATA[1
+2
+3
+Statystyki dla testu gĹ‚Ăłwnego: 
+
+Liczba uĹĽytkownikĂłw 5
+ Liczba postĂłw 10
+ Liczba komentarzy 50
+ Srednia komentarz/user 10.0
+ Srednia komentarz/post 5.0
+ Srednia post/user 2.0
+4
+5
+6
+7
+8
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

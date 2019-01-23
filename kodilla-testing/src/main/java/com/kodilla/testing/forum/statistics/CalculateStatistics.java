@@ -34,15 +34,6 @@ public class CalculateStatistics {
         return averageCommentsPerPost;
     }
 
-    public void setPostsNumber(int postsNumber) {
-        this.postsNumber = postsNumber;
-    }
-
-    public void setCommentsNumber(int commentsNumber) {
-        this.commentsNumber = commentsNumber;
-    }
-
-
     public double calculateAdvStatistics(Statistics statistics){
 
          //wywołujemy metodę postsCount zadeklarowaną w interfejsie i zwrócone przez nią

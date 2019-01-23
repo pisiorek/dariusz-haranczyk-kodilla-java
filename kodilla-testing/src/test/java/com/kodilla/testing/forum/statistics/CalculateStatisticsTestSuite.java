@@ -29,6 +29,9 @@ public class CalculateStatisticsTestSuite {
         //tworzymy obiekt symulujący obiekt klasy implementującej interfejs Statistics
         Statistics statisticsMock = mock(Statistics.class);
 
+        //utworzenie obiektu calculate, bez argumentów
+        CalculateStatistics calculateStats = new CalculateStatistics();
+
         //poniżej dane symulujące działanie metod z interfejsu
         //przygotowanie danych symulacyjnych dla klasy CalculateStatistics, czyli liczba postów i komentarzy
         //oraz ArrayListy z imionami uzytkowników
@@ -46,9 +49,6 @@ public class CalculateStatisticsTestSuite {
         when(statisticsMock.usersNames()).thenReturn(namesList);
         when(statisticsMock.commentsCount()).thenReturn(commentsNumber);
         when(statisticsMock.postsCount()).thenReturn(postsNumber);
-
-        //utworzenie obiektu calculate, bez argumentów
-        CalculateStatistics calculateStats = new CalculateStatistics();
 
         //When
 
@@ -68,15 +68,12 @@ public class CalculateStatisticsTestSuite {
 
         //tworzymy obiekt symulujący obiekt klasy implementującej interfejs Statistics
         Statistics statisticsMock = mock(Statistics.class);
-        //przygotowanie danych symulacyjnych dla klasy CalculateStatistics czyli liczba postów i komentarzy
-        //oraz ArrayListy z imionami uzytkowników
+        CalculateStatistics calculateStats = new CalculateStatistics();
+        //przygotowanie danych symulacyjnych dla klasy CalculateStatistics czyli liczba postów
         int postsNumber = 0;
 
         //wskazujemy mockowi jakie dane ma zwrócić po wywołaniu określonych metod
-
         when(statisticsMock.postsCount()).thenReturn(postsNumber);
-
-        CalculateStatistics calculateStats = new CalculateStatistics();
 
         //When
 
@@ -87,8 +84,6 @@ public class CalculateStatisticsTestSuite {
 
         //Then
         Assert.assertEquals(0, postNumber, 0.1);
-
-
     }
     @Test
     public void testFor1000Posts() {
@@ -112,8 +107,6 @@ public class CalculateStatisticsTestSuite {
 
         //Then
         Assert.assertEquals(1000,postNumber, 0.1);
-
-
     }
     @Test
     public void testForZeroComments() {
@@ -126,7 +119,6 @@ public class CalculateStatisticsTestSuite {
 
         int commentsNumber = 0;
 
-
         //wskazujemy mockowi jakie dane ma zwrócić po wywołaniu określonych metod
 
         when(statisticsMock.commentsCount()).thenReturn(commentsNumber);
@@ -137,11 +129,8 @@ public class CalculateStatisticsTestSuite {
         calculateStats.calculateAdvStatistics(statisticsMock);
         double commentsNum = calculateStats.getCommentsNumber();
 
-
         //Then
         Assert.assertEquals(0, commentsNum, 0.1);
-
-
     }
     @Test
     public void testForMorePost() {
@@ -169,8 +158,6 @@ public class CalculateStatisticsTestSuite {
 
         //Then
         Assert.assertTrue(postsNum > commentsNum);
-
-
     }
 
     @Test
@@ -199,8 +186,6 @@ public class CalculateStatisticsTestSuite {
 
         //Then
         Assert.assertTrue(postsNum < commentsNum);
-
-
     }
     @Test
     public void testForEmptyList() {
@@ -212,7 +197,6 @@ public class CalculateStatisticsTestSuite {
         //oraz ArrayListy z imionami uzytkowników
 
         List<String> namesList = new ArrayList<String>();
-
 
         //kiedy dla instancji obiektu symulującego (mockito)zostanie wywołana matoda wymagana przez interfejs Statistics
         //wtedy zwróć dane symulowane - w tym wypadku namesList zadeklarowaną w interfejsie
@@ -229,8 +213,6 @@ public class CalculateStatisticsTestSuite {
 
         //Then
         Assert.assertEquals(0, userNumber,0.1);
-
-
     }
     @Test
     public void testForHundredElements() {
@@ -254,8 +236,6 @@ public class CalculateStatisticsTestSuite {
 
         }
 
-
-
         //kiedy dla instancji obiektu symulującego (mockito)zostanie wywołana matoda wymagana przez interfejs Statistics
         //wtedy zwróć dane symulowane - w tym wypadku namesList zadeklarowaną w interfejsie
         when(statisticsMock.usersNames()).thenReturn(namesList);
@@ -272,5 +252,4 @@ public class CalculateStatisticsTestSuite {
         Assert.assertEquals(100, userNumber, 0.1);
 
     }
-
 }

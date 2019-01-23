@@ -18,6 +18,8 @@ public class WeatherForecastTestSuite {
         // implementującą interfejs Temperatures
         //pozwala na dostęp do metod wymaganych przez interfejs Temperatures
         Temperatures temperaturesMock = mock(Temperatures.class);
+        //utworzenie obiektu i przekazanie mu w konstruktorze sztucznego interfejsu mocka
+        WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
         //poniżej tworzymy dane symulacyjne które mock przekaże dalej do
         //hashMapa "udająca" dane przekazane przez nie napisaną jeszcze klasę implementującą interfejs Temperatures
@@ -32,15 +34,10 @@ public class WeatherForecastTestSuite {
         //wtedy zwróć dane symulowane - w tym wypadku hashMapę temperaturesMap zadeklarowaną w interfejsie
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
 
-        //utworzenie obiektu i przekazanie mu w konstruktorze sztucznego interfejsu mocka
-        WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
-
-
         //When
 
-        //wywołanie metody już na właściwym obiekcie do któego przekazaliśmy dane symulowane
+        //wywołanie metody już na właściwym obiekcie do którego przekazaliśmy dane symulowane
         int quantityOfSensors = weatherForecast.calculateForecast().size();
-
 
         //Then
         Assert.assertEquals(5, quantityOfSensors);
