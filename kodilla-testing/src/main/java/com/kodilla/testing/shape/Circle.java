@@ -2,14 +2,8 @@ package com.kodilla.testing.shape;
 
 public class Circle implements Shape {
 
-    @Override
-    public String toString() {
-        return "Circle{" +
-                "shapeName='" + shapeName + '\'' +
-                ", r=" + r +
-                '}';
-    }
-
+    final double PI = 3.14;
+    final  double SQUARE = 2;
     private String shapeName;
     private  double r;
 
@@ -24,7 +18,7 @@ public class Circle implements Shape {
     }
     @Override
     public double getField() {
-        return 3.14 * Math.pow( r , 2 );
+        return PI * Math.pow( r , SQUARE );
     }
 
     //klasy wygenerowane przez IntelliJ
@@ -47,6 +41,14 @@ public class Circle implements Shape {
         temp = Double.doubleToLongBits(r);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "shapeName='" + shapeName + '\'' +
+                ", r=" + r +
+                '}';
     }
 
 
