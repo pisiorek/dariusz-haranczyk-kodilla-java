@@ -6,7 +6,7 @@ public class ForumUser {
 
     private final int userID;
     private final String userName;
-    private final  char userSex;
+    private final char userSex;
     private final LocalDate userBornDate;
     private final int postsNumber;
 

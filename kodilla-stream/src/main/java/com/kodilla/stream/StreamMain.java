@@ -27,7 +27,6 @@ public class StreamMain {
 
 
         Map <Integer,ForumUser> mapUsers = forum.getList().stream()
-                .filter(forumUser -> forumUser.getPostsNumber() > 5)
                 .collect(Collectors.toMap(ForumUser::getUserID, forumUser -> forumUser));
 
         System.out.println("# elements: " + mapUsers.size());
