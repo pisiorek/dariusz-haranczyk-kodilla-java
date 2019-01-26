@@ -2,6 +2,7 @@ package com.kodilla.stream;
 
 //import com.kodilla.stream.lambda.ExecuteSaySomething;
 import com.kodilla.stream.beautifier.PoemBeautifier;
+import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.Executor;
 import com.kodilla.stream.lambda.ExpressionExecutor;
 import com.kodilla.stream.lambda.Processor;
@@ -23,7 +24,7 @@ public class StreamMain {
         //Executor codeToExecute = () -> System.out.println("This is an example text.");
         //processor.execute(codeToExecute);
         //bezpośrednie przekazanie argumentu do metody bez tworzenie obiektu executor
-        processor.execute(() -> System.out.println("Wiadomość testowa" ));
+        processor.execute(() -> System.out.println("Przykładowy tekst"));
 
         ExpressionExecutor expressionExecutor = new ExpressionExecutor();
 
@@ -47,6 +48,9 @@ public class StreamMain {
         poemBeautifier.beautify("małe literki na ", "wielkie",(a, b) -> a + b.toUpperCase());
         poemBeautifier.beautify("aaaaaa", "bbbbb",(a, b) -> a + b.concat("cccccccc"));
         poemBeautifier.beautify("aaaaaa", "bbbb",(a, b) -> a + b + b + "ABBBCCC" + " +-" + 987654321);
+
+        System.out.println("Using Stream to generate even numbers from 1 to 20");
+        NumbersGenerator.generateEven(20);
 
 
 
