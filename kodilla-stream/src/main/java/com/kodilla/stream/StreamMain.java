@@ -1,60 +1,38 @@
 package com.kodilla.stream;
-
-//import com.kodilla.stream.lambda.ExecuteSaySomething;
-import com.kodilla.stream.beautifier.PoemBeautifier;
-import com.kodilla.stream.iterate.NumbersGenerator;
-import com.kodilla.stream.lambda.Executor;
-import com.kodilla.stream.lambda.ExpressionExecutor;
-import com.kodilla.stream.lambda.Processor;
-import com.kodilla.stream.lambda.SaySomething;
-import com.kodilla.stream.reference.FunctionalCalculator;
+import com.kodilla.stream.forumuser.Forum;
+import com.kodilla.stream.forumuser.ForumUser;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StreamMain {
-    private static Object ExecuteSaySomething;
-
     public static void main(String[] args) {
 
+        /************************Część I - filtrowanie po płci, wieku i ilości postów********************************
+         *         Podzieliłem to zadanie na dwie części bo nie było w treści doprecyzowane, czy wykonać wszystkie filtrowania od początku do
+         *             końca, i wyswietlić wynik, czy każde filtrowanie robić z osobna z osobnym wynikiem */
+        Forum forum = new Forum();
+        List<ForumUser> forumUsersList = forum.getList().stream()
+                .filter(forumUser -> forumUser.getUserSex() =='M')          //filtrujemy mężczyzn
+                .filter(forumUser -> LocalDate.now().getYear() - forumUser.getUserBornDate().getYear() > 20)        //filtrujemy starszych niż 20 lat
+                .filter(forumUser -> forumUser.getPostsNumber() > 0)        //filtrujemy tych którzy mają przynajmniej 1 post
+                .collect(Collectors.toList());
 
-/*      Processor processor = new Processor();
-        ExecuteSaySomething executeSaySomething = new ExecuteSaySomething();
-        processor.execute(executeSaySomething);*/
+        System.out.println("# elements: " + forumUsersList.size());
+        forumUsersList.stream()
+                .forEach(System.out::println);
 
-        Processor processor = new Processor();
-        //tworzymy stream, typ streama musi być taki ja interfejs którego metody wykorzystuje
-        //Executor codeToExecute = () -> System.out.println("This is an example text.");
-        //processor.execute(codeToExecute);
-        //bezpośrednie przekazanie argumentu do metody bez tworzenie obiektu executor
-        processor.execute(() -> System.out.println("Przykładowy tekst"));
-
-        ExpressionExecutor expressionExecutor = new ExpressionExecutor();
-
-        System.out.println("Calculating expressions with lambdas");
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a + b);
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a - b);
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a * b);
-        expressionExecutor.executeExpression(10, 5, (a, b) -> a / b);
-
-        System.out.println("Calculating expressions with method references");
-        expressionExecutor.executeExpression(3, 4, FunctionalCalculator::multiplyAByB);
-        expressionExecutor.executeExpression(3, 4, FunctionalCalculator::addAToB);
-        expressionExecutor.executeExpression(3, 4, FunctionalCalculator::subBFromA);
-        expressionExecutor.executeExpression(3, 4, FunctionalCalculator::divideAByB);
-
-        System.out.println("Upiększacz tekstu");
-        PoemBeautifier poemBeautifier = new PoemBeautifier();
-
-        poemBeautifier.beautify("Piękny tekst","ABC",(a,b) -> a+b);
-        poemBeautifier.beautify("KKKK + ","InnyTekst",(a,b) -> a+b);
-        poemBeautifier.beautify("małe literki na ", "wielkie",(a, b) -> a + b.toUpperCase());
-        poemBeautifier.beautify("aaaaaa", "bbbbb",(a, b) -> a + b.concat("cccccccc"));
-        poemBeautifier.beautify("aaaaaa", "bbbb",(a, b) -> a + b + b + "ABBBCCC" + " +-" + 987654321);
-
-        System.out.println("Using Stream to generate even numbers from 1 to 20");
-        NumbersGenerator.generateEven(20);
+        /********************Część II zadania - utworzenie mapy z userami**************************************************/
 
 
+        Map <Integer,ForumUser> mapUsers = forum.getList().stream()
+                .filter(forumUser -> forumUser.getPostsNumber() > 5)
+                .collect(Collectors.toMap(ForumUser::getUserID, forumUser -> forumUser));
 
-
-
+        System.out.println("# elements: " + mapUsers.size());
+        mapUsers.entrySet().stream()
+                .map(entry -> entry.getKey() + ": " + entry.getValue())
+                .forEach(System.out::println);
     }
 }
