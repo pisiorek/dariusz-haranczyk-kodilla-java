@@ -6,21 +6,23 @@ import java.util.List;
 
 public final class World implements QuantityPeopleOfTheWorld {
 
-    private  final List<Continent> listOfContinents;
+    //lista przechowuje listę kontynentów - deklaracja
+    private  final List<Continent> continents;
 
     public  World(){
-        listOfContinents= new ArrayList<>();
+        //inicjalizacja listy w konstruktorze
+        continents= new ArrayList<>();
     }
 
     @Override
     public BigDecimal getPeopleQuantity(){
-        return listOfContinents.stream()
-                .flatMap(continent -> continent.getListOfCountriesOnContinent().stream())
+        return continents.stream()
+                .flatMap(continent -> continent.getListOfCountries().stream())
                 .map(Country::getPeopleQuantity)
                 .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
     }
 
     public List<Continent> getListOfContinents(){
-        return listOfContinents;
+        return continents;
     }
 }

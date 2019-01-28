@@ -15,25 +15,25 @@ public class WorldTestSuite {
             Continent america = new Continent();
             World world = new World();
 
-            europe.getListOfCountriesOnContinent().add(new Country("Polska", new BigDecimal("40000000")));
-            europe.getListOfCountriesOnContinent().add(new Country("Niemcy", new BigDecimal("80000000")));
-            europe.getListOfCountriesOnContinent().add(new Country("Chorwacja", new BigDecimal("4000000")));
-            europe.getListOfCountriesOnContinent().add(new Country("Francja", new BigDecimal("80000000")));
+            europe.getListOfCountries().add(new Country("Polska", new BigDecimal("40000000")));
+            europe.getListOfCountries().add(new Country("Niemcy", new BigDecimal("80000000")));
+            europe.getListOfCountries().add(new Country("Chorwacja", new BigDecimal("4000000")));
+            europe.getListOfCountries().add(new Country("Francja", new BigDecimal("80000000")));
 
-            asia.getListOfCountriesOnContinent().add(new Country("Chiny", new BigDecimal("1500000000")));
-            asia.getListOfCountriesOnContinent().add(new Country("Indie", new BigDecimal("1200000000")));
-            asia.getListOfCountriesOnContinent().add(new Country("Mongolia", new BigDecimal("20000000")));
-            asia.getListOfCountriesOnContinent().add(new Country("Japonia", new BigDecimal("200000000")));
+            asia.getListOfCountries().add(new Country("Chiny", new BigDecimal("1500000000")));
+            asia.getListOfCountries().add(new Country("Indie", new BigDecimal("1200000000")));
+            asia.getListOfCountries().add(new Country("Mongolia", new BigDecimal("20000000")));
+            asia.getListOfCountries().add(new Country("Japonia", new BigDecimal("200000000")));
 
-            africa.getListOfCountriesOnContinent().add(new Country("Maroko", new BigDecimal("3000000")));
-            africa.getListOfCountriesOnContinent().add(new Country("Tunezja", new BigDecimal("4000000")));
-            africa.getListOfCountriesOnContinent().add(new Country("Egipt", new BigDecimal("10000000")));
-            africa.getListOfCountriesOnContinent().add(new Country("Algieria", new BigDecimal("5500000")));
+            africa.getListOfCountries().add(new Country("Maroko", new BigDecimal("3000000")));
+            africa.getListOfCountries().add(new Country("Tunezja", new BigDecimal("4000000")));
+            africa.getListOfCountries().add(new Country("Egipt", new BigDecimal("10000000")));
+            africa.getListOfCountries().add(new Country("Algieria", new BigDecimal("5500000")));
 
-            america.getListOfCountriesOnContinent().add(new Country("USA", new BigDecimal("250000000")));
-            america.getListOfCountriesOnContinent().add(new Country("Canada", new BigDecimal("150000000")));
-            america.getListOfCountriesOnContinent().add(new Country("USA", new BigDecimal("250000000")));
-            america.getListOfCountriesOnContinent().add(new Country("USA", new BigDecimal("250000000")));
+            america.getListOfCountries().add(new Country("USA", new BigDecimal("250000000")));
+            america.getListOfCountries().add(new Country("Canada", new BigDecimal("150000000")));
+            america.getListOfCountries().add(new Country("USA", new BigDecimal("250000000")));
+            america.getListOfCountries().add(new Country("USA", new BigDecimal("250000000")));
 
             world.getListOfContinents().add(europe);
             world.getListOfContinents().add(africa);

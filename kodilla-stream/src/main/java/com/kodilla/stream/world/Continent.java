@@ -1,23 +1,22 @@
 package com.kodilla.stream.world;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 public final class Continent {
-    private final List<Country> listOfCountriesOnContinent;
+    private final List<Country> countries;
 
     public Continent(){
-        this.listOfCountriesOnContinent = new ArrayList<>();
+        this.countries = new ArrayList<>();
     }
 
-    public List<Country> getListOfCountriesOnContinent(){
-        return listOfCountriesOnContinent;
+    public List<Country> getListOfCountries(){
+        return countries;
     }
     @Override
     public String toString() {
         return "Continent{" +
-                "listOfCountriesOnContinent=" + listOfCountriesOnContinent +
+                "listOfCountriesOnContinent=" + countries +
                 '}';
     }
 
