@@ -10,7 +10,7 @@ public final class Continent {
         this.countries = new ArrayList<>();
     }
 
-    public List<Country> getListOfCountries(){
+    public List<Country> getCountries(){
         return countries;
     }
     @Override
