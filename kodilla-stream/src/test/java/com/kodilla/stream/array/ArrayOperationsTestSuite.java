@@ -9,16 +9,17 @@ public class ArrayOperationsTestSuite {
     @Test
     public  void testGetAverage(){
         //Given
-        int[] numbersArray =  new int[4];
+        int[] numbersArray =  new int[20];
 
         for (int i=0; i < numbersArray.length; i++){
             numbersArray[i] = i;
         }
         //When
-       OptionalDouble expectedValue = ArrayOperations.getAverage(numbersArray);
+       double expectedValue = ArrayOperations.getAverage(numbersArray);
+
 
         //Then
-        Assert.assertEquals(1.5, expectedValue);
+        Assert.assertEquals(9.5, expectedValue,0.1);
     }
 
 }
