@@ -14,11 +14,10 @@ public interface ArrayOperations {
         return  IntStream.of(numbers)
                 .mapToDouble(n->n)
                 .average().getAsDouble();
+
     }
 }
 
-
-/*        IntStream.of(numbers)
-                .mapToDouble(n->n)
-                .forEach(System.out::println);*/
-
+/*        return  double value = IntStream.range(0,numbers.length)
+                .mapToDouble(n->numbers[value])
+                .average().getAsDouble();*/
