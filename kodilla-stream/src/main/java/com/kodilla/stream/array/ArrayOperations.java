@@ -8,11 +8,11 @@ public interface ArrayOperations {
     static double getAverage(int[] numbers){
 
         IntStream.of(numbers)
-                .mapToDouble(n->n)
+                //.map(n->n)
                 .forEach(System.out::println);
 
         return  IntStream.of(numbers)
-                .mapToDouble(n->n)
+               // .map(n->n)
                 .average().getAsDouble();
 
     }
