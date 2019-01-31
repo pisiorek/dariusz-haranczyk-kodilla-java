@@ -5,8 +5,8 @@ import java.math.BigDecimal;
 
 public final class Country implements QuantityPeopleOfTheWorld {
 
-    private final String name;
-    private final BigDecimal peopleQuantity;
+    private  String name;
+    private BigDecimal peopleQuantity;
 
     public Country(final String countryName, final BigDecimal peopleQuantity){
         this.name = countryName;

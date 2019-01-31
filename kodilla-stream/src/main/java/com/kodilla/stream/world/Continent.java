@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class Continent {
-    private final List<Country> countries;
+    private List<Country> countries;
 
     public Continent(){
         this.countries = new ArrayList<>();
@@ -19,5 +19,6 @@ public final class Continent {
                 "listOfCountriesOnContinent=" + countries +
                 '}';
     }
+    //bfhlgsflkhsdgfdslkjfhgs
 
 }
