@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.stream.Stream;
 
 public class FileReader {
-    public  void readFile() {
+    public  void readFile() throws FileReaderException {
 
         /*ClassLoader jest to klasa odpowiedzialna
         za odnalezienie klas i plików wewnątrz naszej aplikacji - pozwoli nam to odwołać się do naszego pliku
@@ -26,12 +26,11 @@ public class FileReader {
         //Path path = Paths.get(file.getPath());  //możemy te linię pominąc i wstawić od razu nizej do metody lines() jako metoda statyczna Paths.get()
 
         try (Stream<String> fileLines = Files.lines(Paths.get(file.getPath()))){     //klasa Files pozwala czytać z pliku tekstowego za pomocą metody lines()
-
             //wynikiem wywołania lines() jest Stream obiektów typu String
             fileLines.forEach(System.out::println); //wyswietla cały powyzszy stream funkcja terminalną
 
         } catch (IOException e){
-            System.out.println("Wystąpił wyjątek: " + e);
+            throw new FileReaderException();
         }finally {
             System.out.println("Działanie finally - niezależnie od błędu. Wyświetlam się zawsze pomimo ");
         }
