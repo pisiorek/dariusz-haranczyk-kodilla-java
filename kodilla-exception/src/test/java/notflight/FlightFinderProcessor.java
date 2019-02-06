@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class FlightFinderProcessor {
     private Map<String, Boolean> listOfAirPorts= new HashMap<>();
-    private boolean trueOrFalse;
+    private boolean flightIsAvailable;
 
     public FlightFinderProcessor() {
 
@@ -24,23 +24,18 @@ public class FlightFinderProcessor {
 
         for(Map.Entry<String,Boolean> entry : listOfAirPorts.entrySet()){
             if (entry.getKey().equals(flight.getArrivalAirport()) && entry.getValue()){
-                trueOrFalse = true;
+                flightIsAvailable = true;
             }
         }
 
-        if(trueOrFalse) {
+        if(flightIsAvailable) {
             for(Map.Entry<String,Boolean> entry : listOfAirPorts.entrySet()){
-                if(entry.getKey() == flight.getArrivalAirport()){
-                    //listOfAirPorts.put(entry.getKey(),entry.getValue());
+                if(entry.getKey().equals(flight.getArrivalAirport())){
                     System.out.println("Yes, the flight exist");
                 }
-               }
-            //System.out.println("Znalezione połączenia to "+ listOfAirPorts.get(flight));
-           //return  listOfExistFlights;
-
-        }else{
-            throw new RouteNotFoundException("There is no flights");
-        }
+            }
+                } else {
+                    throw new RouteNotFoundException("There is no flights");
+                }
     }
-
 }
