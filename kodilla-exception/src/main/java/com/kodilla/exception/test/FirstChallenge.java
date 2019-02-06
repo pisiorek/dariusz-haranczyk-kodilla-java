@@ -17,14 +17,14 @@ public class FirstChallenge {
     public static void main (String[]args){
 
         FirstChallenge firstChallenge = new FirstChallenge();
-            try {
-                double result = firstChallenge.divide(3, 0);
+        try {
+            double result = firstChallenge.divide(3, 0);
                 System.out.println(result);
-            } catch (ArithmeticException e) {
-                System.out.println("Wystapił błąd dzielenia przez ZERO " + e);
-            } finally {
-                LocalDate date = LocalDate.now();
-                System.out.println("Data próby wykonania działania: "+ date);
-            }
+        } catch (ArithmeticException e) {
+            System.out.println("Wystapił błąd dzielenia przez ZERO " + e);
+        } finally {
+            LocalDate date = LocalDate.now();
+            System.out.println("Data próby wykonania działania: "+ date);
+        }
     }
 }
