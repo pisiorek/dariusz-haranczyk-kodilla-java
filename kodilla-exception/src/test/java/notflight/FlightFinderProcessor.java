@@ -17,7 +17,6 @@ public class FlightFinderProcessor {
         listOfAirPorts.put("ADR", false);
         listOfAirPorts.put("WRC", false);
         listOfAirPorts.put("QWE", false);
-        listOfAirPorts.put("ZZZ", false);
     }
 
     public void  findFlight(Flight flight) throws RouteNotFoundException {
