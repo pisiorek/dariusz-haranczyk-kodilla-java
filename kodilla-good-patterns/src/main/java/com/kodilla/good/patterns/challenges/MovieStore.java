@@ -1,5 +1,6 @@
 package com.kodilla.good.patterns.challenges;
 
+import javax.print.attribute.HashPrintJobAttributeSet;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -31,12 +32,14 @@ public final class MovieStore {
     }
 
     public static void main(String []args){
-            String filmTitles = MovieStore.getMovies().entrySet().stream()
+
+            Map<String,List<String>> filmTitles = MovieStore.getMovies();
+            String titles = filmTitles.entrySet().stream()
                 .map(Map.Entry::getValue)
                 .flatMap(entry->entry.stream())
                 .collect(joining("!","",""));
 
-        System.out.println(filmTitles);
+        System.out.println(titles);
 
     }
 }
