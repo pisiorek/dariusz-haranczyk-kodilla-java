@@ -1,8 +1,8 @@
-package com.kodilla.good.patterns.challenges.ProductOrderService;
+package com.kodilla.good.patterns.challenges.productorderservice;
 
 import java.time.LocalDateTime;
 
-public class DataBase implements RentalRepository {
+public class Database implements RentalRepository {
 
     @Override
     public boolean createRental(User user, LocalDateTime rentFrom, LocalDateTime rentTo) {
