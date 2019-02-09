@@ -36,7 +36,7 @@ public final class MovieStore {
             Map<String,List<String>> filmTitles = MovieStore.getMovies();
             String titles = filmTitles.entrySet().stream()
                 .flatMap(entry -> entry.getValue().stream())
-                .collect(joining("!","",""));
+                .collect(joining("!"));
 
         System.out.println(titles);
 
