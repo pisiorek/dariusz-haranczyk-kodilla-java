@@ -1,4 +1,4 @@
-package foodtodoor;
+package foodToDoor;
 
 public class MailService implements InformationService {
     @Override

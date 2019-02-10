@@ -1,4 +1,4 @@
-package foodtodoor;
+package foodToDoor;
 
 public class OrderDto {
 

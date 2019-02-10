@@ -1,9 +1,9 @@
-package foodtodoor;
+package foodToDoor;
 
 public class Customer {
-    String name;
-    String surname;
-    String deliveryAddress;
+    private String name;
+    private String surname;
+    private String deliveryAddress;
 
     public Customer(String name, String surname, String deliveryAddress) {
         this.name = name;
