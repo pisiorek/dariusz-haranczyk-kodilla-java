@@ -14,7 +14,7 @@ public class OrderServiceProcessor {
     }
 
     public OrderDto process(final OrderRequest orderRequest) {
-        boolean isRented = orderService.order(orderRequest.getCustomer(),orderRequest.getOrderedProduct());
+        boolean isRented = orderService.order(orderRequest.getCustomer(),orderRequest.getOrderedProduct(), orderRequest.getProductQuantity());
 
         if(isRented) {
             informationService.inform(orderRequest.getCustomer());
