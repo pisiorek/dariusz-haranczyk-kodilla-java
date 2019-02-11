@@ -1,4 +1,4 @@
-package foodToDoor;
+package com.kodilla.good.patterns.foodtodoor;
 
 public class OrderRequest {
     private Customer customer;
