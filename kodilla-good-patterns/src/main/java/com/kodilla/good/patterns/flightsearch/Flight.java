@@ -1,6 +1,5 @@
 package com.kodilla.good.patterns.flightsearch;
 
-import java.util.HashMap;
 
 public class Flight {
     private String departureAirport;
@@ -14,9 +13,16 @@ public class Flight {
         this.number = number;
     }
 
-
     public String getDepartureAirport() {
         return departureAirport;
+    }
+
+    public String getArrivalAirport() {
+        return arrivalAirport;
+    }
+
+    public String  getNumber() {
+        return number;
     }
 
     @Override
@@ -26,14 +32,6 @@ public class Flight {
                 ", arrivalAirport='" + arrivalAirport + '\'' +
                 ", number='" + number + '\'' +
                 '}';
-    }
-
-    public String getArrivalAirport() {
-        return arrivalAirport;
-    }
-
-    public String  getNumber() {
-        return number;
     }
 
     @Override
