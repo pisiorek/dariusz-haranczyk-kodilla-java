@@ -6,7 +6,7 @@ public class DrawerTestSuite {
     @Test
     public void testDoDrawing() {
         //Given
-        Drawer drawer = new Drawer();
+        Drawer drawer = new Drawer(new Triangle());
         //When
         drawer.doDrawing();
         //Then
