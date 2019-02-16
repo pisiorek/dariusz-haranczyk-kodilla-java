@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" tests="8" skipped="0" failures="0" errors="0" timestamp="2019-01-23T18:29:31" hostname="DESKTOP-JPA7176" time="0.28">
+<testsuite name="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" tests="8" skipped="0" failures="0" errors="0" timestamp="2019-02-06T20:05:12" hostname="DESKTOP-JPA7176" time="0.265">
   <properties/>
-  <testcase name="testFor1000Posts" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.252"/>
-  <testcase name="testForEmptyList" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.002"/>
-  <testcase name="testCalculateNumbersOfUsers" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.006"/>
-  <testcase name="testForMoreComments" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.003"/>
-  <testcase name="testForHundredElements" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.005"/>
-  <testcase name="testForMorePost" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.002"/>
-  <testcase name="testForZeroPost" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.002"/>
+  <testcase name="testFor1000Posts" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.251"/>
+  <testcase name="testForEmptyList" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.001"/>
+  <testcase name="testCalculateNumbersOfUsers" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.004"/>
+  <testcase name="testForMoreComments" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.001"/>
+  <testcase name="testForHundredElements" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.002"/>
+  <testcase name="testForMorePost" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.001"/>
+  <testcase name="testForZeroPost" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.001"/>
   <testcase name="testForZeroComments" classname="com.kodilla.testing.forum.statistics.CalculateStatisticsTestSuite" time="0.001"/>
   <system-out><![CDATA[Test #1
 Test #2

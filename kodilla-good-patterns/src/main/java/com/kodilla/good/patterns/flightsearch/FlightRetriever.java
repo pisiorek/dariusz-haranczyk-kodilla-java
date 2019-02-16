@@ -3,11 +3,12 @@ package com.kodilla.good.patterns.flightsearch;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public final class FlightRetriever {
 
     private  final List<Flight> flights = new ArrayList<Flight>();
-        public FlightRetriever(){
+
+    public FlightRetriever(){
+
             flights.add(new Flight("Warszawa", "Kraków", "001"));
             flights.add(new Flight("Kraków", "Warszawa", "002"));
 
