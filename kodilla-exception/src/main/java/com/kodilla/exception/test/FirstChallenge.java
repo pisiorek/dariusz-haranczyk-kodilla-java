@@ -14,8 +14,8 @@ public class FirstChallenge {
     /**
      * This main can throw an ArithmeticException!!!
      * @param args    */
+8.2
     public static void main (String[]args){
-
         FirstChallenge firstChallenge = new FirstChallenge();
         try {
             double result = firstChallenge.divide(3, 0);

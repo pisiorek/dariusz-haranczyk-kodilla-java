@@ -2,20 +2,12 @@ package com.kodilla.stream.portfolio;
 
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.Month;
-import java.time.temporal.ChronoField;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
-import java.time.Period;
-
 import static java.time.temporal.ChronoUnit.DAYS;
 import static java.util.stream.Collectors.toList;
-import static java.util.stream.LongStream.range;
+
 
 public class BoardTestSuite {
     public Board prepareTestData() {
@@ -130,7 +122,6 @@ public class BoardTestSuite {
     @Test
     public void testAddTaskListAverageWorkingOnTask() {
         //Given
-
         Board project = prepareTestData();
         //When
         List<TaskList> inProgressTasks = new ArrayList<>();
@@ -141,17 +132,12 @@ public class BoardTestSuite {
                 .filter(t -> t.getCreated().isBefore(LocalDate.now()))
                 .collect(toList());
 
-        long sumOfDays  = tasks.stream()
-                .map(d -> DAYS.between(LocalDate.now(),d.getCreated()))
-                .reduce((long) 0, (sum, current) -> (sum += current)) * (-1);
+        long sumOfDays = tasks.stream()
+                .map(d -> DAYS.between(d.getCreated(), LocalDate.now()))
+                .reduce((long) 0, (sum, current) -> (sum += current));
 
-        long average = (sumOfDays / tasks.size());
-        System.out.println("Ilość wszystkich dni pracy: ");
-        System.out.println(sumOfDays);
-        System.out.println("Srednia ilość dni pracy: ");
-        System.out.println(average);
-
-        Assert.assertEquals(15, average);
+        double average = (sumOfDays / tasks.size());
+        Assert.assertEquals(15, average,0.01);
     }
 
 }
