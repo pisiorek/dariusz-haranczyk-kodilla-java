@@ -5,6 +5,6 @@ public class Application {
 
         FlightRetriever flightRetriever = new FlightRetriever();
         SearchFlightService searchFlightService = new SearchFlightService("Poznań", "Szczecin", flightRetriever);
-        searchFlightService.serchFlight();
+        searchFlightService.searchFlight();
     }
 }

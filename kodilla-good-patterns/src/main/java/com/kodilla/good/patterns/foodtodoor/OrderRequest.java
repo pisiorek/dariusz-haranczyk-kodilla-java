@@ -1,13 +1,13 @@
-package foodtodoor;
+package com.kodilla.good.patterns.foodtodoor;
 
 public class OrderRequest {
     private Customer customer;
-    private Supplier orderedProduct;
+    private Supplier supplier;
     private int productQuantity;
 
-    public OrderRequest(Customer customer, Supplier orderedProduct, int productQuantity) {
+    public OrderRequest(Customer customer, Supplier supplier, int productQuantity) {
         this.customer = customer;
-        this.orderedProduct = orderedProduct;
+        this.supplier = supplier;
         this.productQuantity = productQuantity;
     }
 
@@ -15,8 +15,8 @@ public class OrderRequest {
         return customer;
     }
 
-    public Supplier getOrderedProduct() {
-        return orderedProduct;
+    public Supplier getSupplier() {
+        return supplier;
     }
 
     public int getProductQuantity() {
