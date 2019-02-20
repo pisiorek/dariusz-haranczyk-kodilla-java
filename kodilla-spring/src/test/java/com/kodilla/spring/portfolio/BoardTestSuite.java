@@ -23,7 +23,7 @@ public class BoardTestSuite {
         //Then
         int sizeOfArrayListToDoTask = board.getToDoList().getTask().size();
         int sizeOfArrayListInProgressTask = board.getInProgressList().getTask().size();
-        int sizeOfArrayListDoneTask = board.getInProgressList().getTask().size();
+        int sizeOfArrayListDoneTask = board.getDoneList().getTask().size();
 
         Assert.assertEquals(sizeOfArrayListToDoTask,1);
         Assert.assertEquals(sizeOfArrayListInProgressTask,1);
