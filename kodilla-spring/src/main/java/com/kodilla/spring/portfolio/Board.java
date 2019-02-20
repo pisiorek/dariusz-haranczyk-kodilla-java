@@ -18,7 +18,7 @@ public final class Board {
         toDoList.addTask(taskToDoList);
         toDoList.showTasks();
     }
-    public void addTaskinProgressList(String taskInProgressList){
+    public void addTaskInProgressList(String taskInProgressList){
         inProgressList.addTask(taskInProgressList);
         inProgressList.showTasks();
     }

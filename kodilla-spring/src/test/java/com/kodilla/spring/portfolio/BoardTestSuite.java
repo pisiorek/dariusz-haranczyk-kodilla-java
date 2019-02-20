@@ -3,12 +3,14 @@ package com.kodilla.spring.portfolio;
 import javafx.concurrent.Task;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
-import java.util.List;
-
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class BoardTestSuite {
     @Test
     public  void testTaskAdd(){
@@ -18,7 +20,7 @@ public class BoardTestSuite {
         Board board = context.getBean(Board.class);
         //When
         board.addTaskToDoList("Zadanie nr 1 do wykonania");
-        board.addTaskinProgressList("Zadanie numer 1 w trakcie wykonywania");
+        board.addTaskInProgressList("Zadanie numer 1 w trakcie wykonywania");
         board.addTaskDoneList("Zadanie numer 1 z wykonanych");
         //Then
         int sizeOfArrayListToDoTask = board.getToDoList().getTask().size();
