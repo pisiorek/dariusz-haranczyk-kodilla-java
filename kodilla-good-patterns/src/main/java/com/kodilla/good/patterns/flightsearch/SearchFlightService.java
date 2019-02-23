@@ -24,10 +24,10 @@ public class SearchFlightService {
     }
 
     public void serchFlight(){
-        System.out.println("All flights from airport in: " + startAirport);
-    Map<String,Flight> resultFlights = flightRetriever.getFlights().stream()
-            .filter(flight -> flight.getDepartureAirport().equals(startAirport))
-            .collect(Collectors.toMap(Flight::getNumber, flight -> flight));
+       /* System.out.println("All flights from airport in: " + startAirport);
+    Map<String,Flight> resultFlights = flightRetriever.getFlights().entrySet().stream()
+            .filter(flight -> flight.getValue().getDepartureAirport().equals(startAirport))
+            .collect(Collectors.toMap(flight->flight.get, flight -> flight));
     streamProccesor(resultFlights);
 
         System.out.println("All flights to airport in: " + destinationAirport);
@@ -50,6 +50,6 @@ public class SearchFlightService {
                     System.out.println(entry.getValue().toString() + "\n" + entry1.getValue().toString());
                 }
             }
-        }
+        }*/
     }
 }
