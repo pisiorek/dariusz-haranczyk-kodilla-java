@@ -15,12 +15,13 @@ public class SearchFlightService {
         this.flightRetriever = flightRetriever;
     }
 
-    public void streamProccesor( Map<String, Flight> resultFlights){
+    private FlightDto streamProccesor(Map<String, Flight> resultFlights){
         System.out.println("Quantity of flights: " + resultFlights.size());
         resultFlights.entrySet().stream()
                 .map(entry -> entry.getKey() + ": " + entry.getValue())
                 .forEach(System.out::println);
         System.out.println("\n");
+        return new FlightDto(resultFlights);
     }
 
     public void serchFlight(){
@@ -30,26 +31,51 @@ public class SearchFlightService {
             .collect(Collectors.toMap(flight->flight.get, flight -> flight));
     streamProccesor(resultFlights);
 
+    private Map<String, Flight> showFlightsFromAirport(){
+        System.out.println("All flights from airport in: " + startAirport);
+        Map<String,Flight> resultFlights = flightRetriever.getFlights().stream()
+                .filter(flight -> flight.getDepartureAirport().equals(startAirport))
+                .collect(Collectors.toMap(Flight::getNumber, flight -> flight));
+        return  resultFlights;
+    }
+
+
+    private Map<String, Flight> showFlightsToAirport(){
         System.out.println("All flights to airport in: " + destinationAirport);
-    Map<String,Flight> resultFlights1 = flightRetriever.getFlights().stream()
-            .filter(flight -> flight.getArrivalAirport().equals(destinationAirport))
-            .collect(Collectors.toMap(Flight::getNumber, flight -> flight));
+        Map<String,Flight> resultFlights = flightRetriever.getFlights().stream()
+                .filter(flight -> flight.getArrivalAirport().equals(destinationAirport))
+                .collect(Collectors.toMap(Flight::getNumber, flight -> flight));
+        return  resultFlights;
+    }
 
-    streamProccesor(resultFlights1);
-
-    Map<String,Flight> resultFlights2 = flightRetriever.getFlights().stream()
-            .filter(flight -> flight.getDepartureAirport().equals(startAirport) || flight.getArrivalAirport().equals(destinationAirport))
-            .collect(Collectors.toMap(Flight::getNumber, flight -> flight));
+    private FlightDto searchCombinedFlight(){
+        Map<String,Flight> resultCombinedFlights = flightRetriever.getFlights().stream()
+                .filter(flight -> flight.getDepartureAirport().equals(startAirport) || flight.getArrivalAirport().equals(destinationAirport))
+                .collect(Collectors.toMap(Flight::getNumber, flight -> flight));
 
         System.out.println("Combined flights between " + startAirport + " and " + destinationAirport);
-        for(Map.Entry <String,Flight> entry : resultFlights2.entrySet()) {
+        for(Map.Entry <String,Flight> entry : resultCombinedFlights.entrySet()) {
 
-            for (Map.Entry<String, Flight> entry1 : resultFlights2.entrySet()) {
+            for (Map.Entry<String, Flight> entry1 : resultCombinedFlights.entrySet()) {
 
                 if (entry.getValue().getArrivalAirport().equals(entry1.getValue().getDepartureAirport())) {
+
                     System.out.println(entry.getValue().toString() + "\n" + entry1.getValue().toString());
                 }
             }
+
         }*/
+
+        }
+
+        return new FlightDto(resultCombinedFlights);
+    }
+
+    public void searchFlight(){
+        streamProccesor(showFlightsFromAirport());
+        streamProccesor(showFlightsToAirport());
+        searchCombinedFlight();
+ master
     }
 }
+

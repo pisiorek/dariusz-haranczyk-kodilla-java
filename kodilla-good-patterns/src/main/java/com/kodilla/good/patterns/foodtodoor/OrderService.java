@@ -1,4 +1,4 @@
-package foodtodoor;
+package com.kodilla.good.patterns.foodtodoor;
 
 public class OrderService {
     public boolean order (final Customer customer, final Supplier supplier, final int productQuantity){
