@@ -24,6 +24,13 @@ public class SearchFlightService {
         return new FlightDto(resultFlights);
     }
 
+    public void serchFlight(){
+       /* System.out.println("All flights from airport in: " + startAirport);
+    Map<String,Flight> resultFlights = flightRetriever.getFlights().entrySet().stream()
+            .filter(flight -> flight.getValue().getDepartureAirport().equals(startAirport))
+            .collect(Collectors.toMap(flight->flight.get, flight -> flight));
+    streamProccesor(resultFlights);
+
     private Map<String, Flight> showFlightsFromAirport(){
         System.out.println("All flights from airport in: " + startAirport);
         Map<String,Flight> resultFlights = flightRetriever.getFlights().stream()
@@ -31,6 +38,7 @@ public class SearchFlightService {
                 .collect(Collectors.toMap(Flight::getNumber, flight -> flight));
         return  resultFlights;
     }
+
 
     private Map<String, Flight> showFlightsToAirport(){
         System.out.println("All flights to airport in: " + destinationAirport);
@@ -55,6 +63,9 @@ public class SearchFlightService {
                     System.out.println(entry.getValue().toString() + "\n" + entry1.getValue().toString());
                 }
             }
+
+        }*/
+
         }
 
         return new FlightDto(resultCombinedFlights);
@@ -64,6 +75,7 @@ public class SearchFlightService {
         streamProccesor(showFlightsFromAirport());
         streamProccesor(showFlightsToAirport());
         searchCombinedFlight();
+ master
     }
 }
 
