@@ -5,3 +5,4 @@ public class PatternsRunner {
         System.out.println("Welcome to the module 11 - Patterns");
     }
 }
+
