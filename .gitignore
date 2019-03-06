@@ -1,5 +1,7 @@
 .gradle
 /build/
+**/build
+**/out
 !gradle/wrapper/gradle-wrapper.jar
 
 
@@ -19,6 +21,9 @@
 *.ipr
 *.class
 /out/
+/build/
+**/build
+**/out
 
 ### NetBeans ###
 /nbproject/private/
