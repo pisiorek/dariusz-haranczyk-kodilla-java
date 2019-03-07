@@ -8,7 +8,7 @@ public class FlightFinder {
         try {
             flightFinderProcessor.findFlight(find1);
 
-        }catch(RouteNotFoundException e){
+        } catch (RouteNotFoundException e){
             System.out.println("There is no flights");
         }
     }
