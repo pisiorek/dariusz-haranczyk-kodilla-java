@@ -12,7 +12,6 @@ public class TaskList {
     private String description;
 
     public TaskList(){
-
     }
 
     public TaskList(String listName, String description) {
