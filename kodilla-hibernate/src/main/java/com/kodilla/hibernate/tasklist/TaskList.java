@@ -1,5 +1,7 @@
 package com.kodilla.hibernate.tasklist;
 
+//import com.kodilla.hibernate.task.TaskFinancialDetails;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
@@ -49,4 +51,5 @@ public class TaskList {
     private void setDescription(String description) {
         this.description = description;
     }
+
 }
