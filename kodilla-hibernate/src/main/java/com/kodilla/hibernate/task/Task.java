@@ -55,6 +55,16 @@ public final class Task {
         return taskFinancialDetails;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "TASKLIST_ID")
+    public TaskList getTaskList(){
+        return taskList;
+    }
+
+    public void setTaskList(TaskList taskList){
+        this.taskList = taskList;
+    }
+
     private void setId(int id) {
         this.id = id;
     }

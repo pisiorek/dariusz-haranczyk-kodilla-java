@@ -2,6 +2,8 @@ package com.kodilla.hibernate.task.dao;
 
 import com.kodilla.hibernate.task.Task;
 import com.kodilla.hibernate.task.TaskFinancialDetails;
+import com.kodilla.hibernate.tasklist.TaskList;
+import com.kodilla.hibernate.tasklist.dao.TaskListDao;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,6 +21,7 @@ public class TaskDaoTestSuite {
     @Autowired
     private TaskDao taskDao;
     private static final String DESCRIPTION = "Test: Learn Hibernate";
+
 
     @Test
     public void testTaskDaoSave() {
@@ -71,4 +74,5 @@ public class TaskDaoTestSuite {
         //CleanUp
         //taskDao.deleteById(id);
     }
+
 }
