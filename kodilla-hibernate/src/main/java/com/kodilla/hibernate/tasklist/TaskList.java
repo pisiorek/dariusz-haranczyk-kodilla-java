@@ -1,6 +1,6 @@
 package com.kodilla.hibernate.tasklist;
 
-//import com.kodilla.hibernate.task.TaskFinancialDetails;
+import com.kodilla.hibernate.task.TaskFinancialDetails;
 
 import com.kodilla.hibernate.task.Task;
 
@@ -47,7 +47,7 @@ public class TaskList {
 
     @OneToMany(
             targetEntity = Task.class,
-            mappedBy = "tasklist",
+            mappedBy = "taskList",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
