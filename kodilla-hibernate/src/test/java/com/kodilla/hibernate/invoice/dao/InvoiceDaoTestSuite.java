@@ -1,6 +1,6 @@
 package com.kodilla.hibernate.invoice.dao;
 
-
+import com.kodilla.hibernate.invoice.Invoice;
 import com.kodilla.hibernate.invoice.Item;
 import com.kodilla.hibernate.invoice.Product;
 import org.junit.Assert;
@@ -9,33 +9,33 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import java.math.BigDecimal;
-import java.util.List;
-import java.util.Optional;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class InvoiceDaoTestSuite {
     @Autowired
-    ItemDao itemDao;
+    InvoiceDao invoiceDao;
 
     @Test
-    public void testSaveProductToDatabase() {
-       //Given
+    public void testInvoiceDaoSave(){
+
         Item item = new Item(new BigDecimal(10), 10, new BigDecimal(100));
-        item.setProduct(new Product("Mango"));
+        item.setProduct(new Product("Jabłko"));
+
+        Invoice invoice = new Invoice("BB/01");
+
+        invoice.getItems().add(item);
+
+        item.setItemList(invoice);
 
         //When
-        itemDao.save(item);
-
+        invoiceDao.save(invoice);
+        int id = invoice.getId();
 
         //Then
-        int id = item.getId();
         Assert.assertNotEquals(0, id);
 
-        //Clear
-        //itemDao.deleteById(id);
 
     }
 }
