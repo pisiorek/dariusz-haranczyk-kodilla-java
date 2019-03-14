@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name = "PRODUCTS")
 public class Product {
     private int id;
     private String name;
@@ -30,6 +30,20 @@ public class Product {
     public String getName(){
         return name;
     }
+
+/*    @OneToMany(
+            targetEntity = Item.class,
+            mappedBy = "itemList",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    public List<Item> getItemList() {
+        return itemList;
+    }
+
+    public void setItemList(List<Item> itemList) {
+        this.itemList = itemList;
+    }*/
 
     private void setId(int id) {
         this.id = id;
