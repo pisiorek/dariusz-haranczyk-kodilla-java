@@ -9,11 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CompanyDaoTestSuite {
     @Autowired
     CompanyDao companyDao;
+    @Autowired
+    EmployeeDao employeeDao;
 
     @Test
     public void testSaveManyToMany(){
@@ -59,5 +63,47 @@ public class CompanyDaoTestSuite {
         } catch (Exception e) {
             //do nothing
         }
+    }
+
+    @Test
+    public void CompanyDaoTestSuite(){
+
+        //Given
+        Employee employee1 = new Employee("Jan","Kot");
+        Employee employee2 = new Employee("Ewa","Pies");
+        Employee employee3 = new Employee("Marek","Kot");
+        Employee employee4 = new Employee("Jan","Kot");
+        Employee employee5 = new Employee("Zbigniew","Mucha");
+
+        employeeDao.save(employee1);
+        int emplId1 = employee1.getId();
+        employeeDao.save(employee2);
+        int emplId2 = employee2.getId();
+        employeeDao.save(employee3);
+        int emplId3 = employee3.getId();
+        employeeDao.save(employee4);
+        int emplId4 = employee4.getId();
+        employeeDao.save(employee5);
+        int emplId5 = employee5.getId();
+
+        //When
+        List<Employee> searchingLastname = employeeDao.retrieveEmployeeWithGivenLastname("Kot");
+
+        //Then
+        try {
+            Assert.assertEquals(3, searchingLastname.size());
+
+        } finally {
+            //CleanUp
+            employeeDao.deleteById(emplId1);
+            employeeDao.deleteById(emplId2);
+            employeeDao.deleteById(emplId3);
+            employeeDao.deleteById(emplId4);
+            employeeDao.deleteById(emplId5);
+
+        }
+
+
+
     }
 }
