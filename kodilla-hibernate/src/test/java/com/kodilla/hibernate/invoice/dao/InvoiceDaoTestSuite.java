@@ -24,7 +24,7 @@ public class InvoiceDaoTestSuite {
         Item item1 = new Item(new BigDecimal(15), 10, new BigDecimal(150));
 
         item.setProduct(new Product("Gruszka"));
-        item1.setProduct(new Product("Mleko"));
+        item1.setProduct(new Product("Gruszka"));
 
         Invoice invoice = new Invoice("AA/01");
 
