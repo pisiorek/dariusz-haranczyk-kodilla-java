@@ -23,7 +23,6 @@ public class InvoiceDaoTestSuite {
         Item item = new Item(new BigDecimal(10), 10, new BigDecimal(100));
         Item item1 = new Item(new BigDecimal(15), 10, new BigDecimal(150));
 
-        item.setProduct(new Product("Dynia"));
         item.setProduct(new Product("Gruszka"));
         item1.setProduct(new Product("Mleko"));
 
