@@ -21,13 +21,19 @@ public class InvoiceDaoTestSuite {
     public void testInvoiceDaoSave(){
 
         Item item = new Item(new BigDecimal(10), 10, new BigDecimal(100));
-        item.setProduct(new Product("Jabłko"));
+        Item item1 = new Item(new BigDecimal(15), 10, new BigDecimal(150));
 
-        Invoice invoice = new Invoice("BB/01");
+        item.setProduct(new Product("Dynia"));
+        item.setProduct(new Product("Gruszka"));
+        item1.setProduct(new Product("Mleko"));
+
+        Invoice invoice = new Invoice("AA/01");
 
         invoice.getItems().add(item);
+        invoice.getItems().add(item1);
 
         item.setInvoice(invoice);
+        item1.setInvoice(invoice);
 
         //When
         invoiceDao.save(invoice);
