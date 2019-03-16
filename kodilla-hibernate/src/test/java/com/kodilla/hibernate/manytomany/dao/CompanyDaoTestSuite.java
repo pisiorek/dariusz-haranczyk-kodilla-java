@@ -66,7 +66,7 @@ public class CompanyDaoTestSuite {
     }
 
     @Test
-    public void CompanyDaoTestSuite(){
+    public void testSearchingEmployeeWithGivenLastname(){
 
         //Given
         Employee employee1 = new Employee("Jan","Kot");
@@ -100,10 +100,44 @@ public class CompanyDaoTestSuite {
             employeeDao.deleteById(emplId3);
             employeeDao.deleteById(emplId4);
             employeeDao.deleteById(emplId5);
-
         }
+    }
 
+    @Test
+    public void testSearchingCompaniesWithGivenName(){
 
+        //Given
+        Company company1 = new Company("Polski Cukier");
+        int comp1Id = company1.getId();
 
+        Company company2 = new Company("Niemieckie Samochody");
+        int comp2Id = company2.getId();
+
+        Company company3 = new Company("Polskie Mleko");
+        int comp3Id = company3.getId();
+
+        Company company4 = new Company("Szwajcarskie Sery");
+        int comp4Id = company4.getId();
+
+        companyDao.save(company1);
+        companyDao.save(company2);
+        companyDao.save(company3);
+        companyDao.save(company4);
+
+        //When
+        List<Company> searchingCompanyByName = companyDao.retrieveCompanyByName("Szw");
+
+        //Then
+        try {
+            Assert.assertEquals(1, searchingCompanyByName.size());
+
+        } finally {
+
+            //CleanUp
+/*          companyDao.deleteById(comp1Id);
+            companyDao.deleteById(comp2Id);
+            companyDao.deleteById(comp3Id);
+            companyDao.deleteById(comp4Id);*/
+        }
     }
 }
