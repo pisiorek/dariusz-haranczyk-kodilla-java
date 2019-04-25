@@ -5,11 +5,6 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-/*@NamedQuery(
-        name = "Company.retrieveCompanyByName",
-        query = " FROM Company WHERE company_name = :NAME "
-        //resultClass = Company.class
-)*/
 @NamedNativeQuery(
         name = "Company.retrieveCompanyByName",
         query = "SELECT  * FROM COMPANIES " +

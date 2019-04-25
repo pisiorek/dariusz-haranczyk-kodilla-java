@@ -6,4 +6,5 @@ public class ExpressionExecutor {
         double result = mathExpression.calculateExpression(a, b);
         System.out.println("Result equals: " + result);
     }
+
 }
