@@ -59,7 +59,7 @@ public class Order {
         return isSubmitted;
     }
 
-    public void setBooleanisSubmitted(boolean isSubmitted) {
+    public void setSubmitted(boolean isSubmitted) {
         this.isSubmitted = isSubmitted;
     }
 }
