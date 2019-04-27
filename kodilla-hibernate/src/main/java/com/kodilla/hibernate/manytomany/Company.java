@@ -1,5 +1,7 @@
 package com.kodilla.hibernate.manytomany;
 
+import org.springframework.stereotype.Service;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -11,6 +13,12 @@ import java.util.List;
                 "WHERE SUBSTRING(COMPANY_NAME,1,3) = :SEARCH",
         resultClass = Company.class
 )
+
+@NamedQuery(
+        name = "Company.retrieveCompanyByPhrase",
+        query = "FROM Company WHERE Company_Name LIKE :PHRASE"
+)
+@Service
 @Entity
 @Table(name = "COMPANIES")
 public class Company {

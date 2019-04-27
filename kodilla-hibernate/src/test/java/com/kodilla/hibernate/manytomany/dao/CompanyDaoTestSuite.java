@@ -94,7 +94,7 @@ public class CompanyDaoTestSuite {
             Assert.assertEquals(3, searchingLastname.size());
 
         } finally {
-            //CleanUp
+        //CleanUp
             employeeDao.deleteById(emplId1);
             employeeDao.deleteById(emplId2);
             employeeDao.deleteById(emplId3);
@@ -138,6 +138,84 @@ public class CompanyDaoTestSuite {
             companyDao.deleteById(comp2Id);
             companyDao.deleteById(comp3Id);
             companyDao.deleteById(comp4Id);*/
+        }
+    }
+
+    @Test
+    public void testSearchingEmployeeByPhrase(){
+
+        //Given
+        Employee employee1 = new Employee("Jan","Kot");
+        Employee employee2 = new Employee("Ewa","Pies");
+        Employee employee3 = new Employee("Marek","Kot");
+        Employee employee4 = new Employee("Jan","Kot");
+        Employee employee5 = new Employee("Zbigniew","Kokot");
+
+        employeeDao.save(employee1);
+        int emplId1 = employee1.getId();
+        employeeDao.save(employee2);
+        int emplId2 = employee2.getId();
+        employeeDao.save(employee3);
+        int emplId3 = employee3.getId();
+        employeeDao.save(employee4);
+        int emplId4 = employee4.getId();
+        employeeDao.save(employee5);
+        int emplId5 = employee5.getId();
+
+        //When
+        List<Employee> searchingEmployeeByPhrase = employeeDao.retrieveEmployeeByPhrase("%Ko%");
+
+        //Then
+        try {
+            Assert.assertEquals(4, searchingEmployeeByPhrase.size());
+
+        } finally {
+            //CleanUp
+         /*   employeeDao.deleteById(emplId1);
+            employeeDao.deleteById(emplId2);
+            employeeDao.deleteById(emplId3);
+            employeeDao.deleteById(emplId4);
+            employeeDao.deleteById(emplId5);*/
+            employeeDao.deleteAll();
+        }
+    }
+
+    @Test
+    public void testSearchingCompaniesByPhrase(){
+
+        //Given
+        Company company1 = new Company("Polski Cukier");
+        int comp1Id = company1.getId();
+
+        Company company2 = new Company("Niemieckie Samochody");
+        int comp2Id = company2.getId();
+
+        Company company3 = new Company("Polskie Mlekosz");
+        int comp3Id = company3.getId();
+
+        Company company4 = new Company("Szwajcarskie Sery");
+        int comp4Id = company4.getId();
+
+        companyDao.save(company1);
+        companyDao.save(company2);
+        companyDao.save(company3);
+        companyDao.save(company4);
+
+        //When
+        List<Company> searchingCompanyByPhrase = companyDao.retrieveCompanyByPhrase("%sz%");
+
+        //Then
+        try {
+            Assert.assertEquals(2, searchingCompanyByPhrase.size());
+
+        } finally {
+
+            //CleanUp
+/*          companyDao.deleteById(comp1Id);
+            companyDao.deleteById(comp2Id);
+            companyDao.deleteById(comp3Id);
+            companyDao.deleteById(comp4Id);*/
+            companyDao.deleteAll();
         }
     }
 }

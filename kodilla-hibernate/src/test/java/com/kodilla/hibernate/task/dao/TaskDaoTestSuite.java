@@ -26,7 +26,7 @@ public class TaskDaoTestSuite {
     @Test
     public void testTaskDaoSave() {
         //Given
-        Task task = new Task(DESCRIPTION, 7);
+        Task task = new Task(DESCRIPTION, 111);
 
         //When
         taskDao.save(task);
@@ -37,7 +37,8 @@ public class TaskDaoTestSuite {
         Assert.assertTrue(readTask.isPresent());
 
         //CleanUp
-        taskDao.deleteById(id);
+        //taskDao.deleteById(id);
+        //taskDao.deleteAll();
     }
 
     @Test
