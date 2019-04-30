@@ -68,6 +68,7 @@ public class CalculatorTestSuite {
         //Then
         LOGGER.info("Testing factorial method");
         System.out.println(result);
+
         assertTrue(BigDecimal.ONE.compareTo(result) < 0);
     }
 }
