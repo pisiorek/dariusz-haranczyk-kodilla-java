@@ -17,7 +17,7 @@ public class Watcher {
 
     @Before("execution(* com.kodilla.patterns2.aop.calculator.Calculator.factorial(..))")
     public void logEvent(){
-        LOGGER.info("Logging the event using Watcher");
+        LOGGER.error("Logging the event using Watcher");
         System.out.println("Logging the event using Watcher");
     }
 
