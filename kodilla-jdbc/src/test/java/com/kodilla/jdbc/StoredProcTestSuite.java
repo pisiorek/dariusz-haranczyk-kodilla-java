@@ -34,8 +34,7 @@ public class StoredProcTestSuite {
     public void testUpdateBestsellers() throws SQLException{
         //Given
         DbManager dbManager = DbManager.getInstance();                      //nawiązanie połączenia z bazą
-        //String sqlUpdate = "UPDATE READERS SET VIP_LEVEL=\"null\"";      //zapytanie ustwiające pola w tabeli READERS na wartość NULL - potrzebne do testów
-        String sqlUpdate = "UPDATE BOOKS SET BESTSELLER=false";      //zapytanie ustwiające pola w tabeli READERS na wartość NULL - potrzebne do testów
+        String sqlUpdate = "UPDATE BOOKS SET BESTSELLER=false";             //zapytanie ustwiające pola w tabeli READERS na wartość NULL - potrzebne do testów
         Statement statement = dbManager.getConnection().createStatement();
         statement.executeUpdate(sqlUpdate);                                 //wywołanie update - stsujemy dla aktualizacji danych bezpośredniow bazie
 
@@ -44,7 +43,7 @@ public class StoredProcTestSuite {
         statement.execute(sqlProcedureCall);                                //wywołanie procedury
 
         //Then
-        String sqlCheckTable = "SELECT COUNT(*) AS HOW_MANY FROM BOOKS WHERE BESTSELLER=false"; //zapytanie zliczające rekordy z nullem (wynik = 1 po wywołaniu UpdateBooksBestseller)
+        String sqlCheckTable = "SELECT COUNT(*) AS HOW_MANY FROM BOOKS WHERE BESTSELLER=false"; //zapytanie zliczające rekordy z false (wynik = 1 po wywołaniu UpdateBooksBestseller)
         ResultSet rs = statement.executeQuery(sqlCheckTable);
         int howMany = 0;
         if(rs.next()){
