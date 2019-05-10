@@ -35,7 +35,6 @@ public class WeatherForecastTestSuite {
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
 
         //When
-
         //wywołanie metody już na właściwym obiekcie do którego przekazaliśmy dane symulowane
         int quantityOfSensors = weatherForecast.calculateForecast().size();
 
