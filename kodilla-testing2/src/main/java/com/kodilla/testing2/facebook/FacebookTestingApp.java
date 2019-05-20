@@ -8,8 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class FacebookTestingApp {
 
-    //public static final String XPATH_WAIT_FOR = "//select[1]";
-    public static final String XPATH_WAIT_FOR = "//select[1]";
+    public static final String XPATH_WAIT_FOR = "//div[contains(@class, \"_5k_5\")]/span/span/select[3]";
     public static final String XPATH_SELECT_DAY = "//div[contains(@class, \"_5k_5\")]/span/span/select[1]";
     public static final String XPATH_SELECT_MONTH = "//div[contains(@class, \"_5k_5\")]/span/span/select[2]";
     public static final String XPATH_SELECT_YEAR = "//div[contains(@class, \"_5k_5\")]/span/span/select[3]";
