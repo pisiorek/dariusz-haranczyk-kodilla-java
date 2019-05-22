@@ -116,8 +116,6 @@ public class CrudAppTestSuite {
 
         Thread.sleep(2000);
 
-        final  String XPATH_REMOVE_BUTTON = "/html/body/main/section[2]/div/form[1]/div/fieldset[1]/button[4]";
-
         driver.findElements(By.xpath("//form[@class=\"datatable__row\"]")).stream()
                 .filter(anyForm ->
                         anyForm.findElement(By.xpath(".//p[@class=\"datatable__field-value\"]"))
