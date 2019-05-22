@@ -26,8 +26,6 @@ public class CrudAppTestSuite {
         driver.get(BASE_URL);
         generator = new Random();
 
-       /* driverTrello = WebDriverConfig.getdriver(WebDriverConfig.CHROME);
-        driverTrello.get(TRELLO_URL);*/
     }
 
     @After
